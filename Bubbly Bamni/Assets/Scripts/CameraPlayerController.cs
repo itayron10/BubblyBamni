@@ -26,9 +26,11 @@ public class CameraPlayerController : MonoBehaviour
     [SerializeField] float maxCameraXRotation; // used to clamp the camera x rotation
 
 
-    private void Awake() => FindPrivateObjects();
-    private void Start() => SetCursorStateLocked();
-
+    private void Start()
+    {
+        FindPrivateObjects();
+        SetCursorStateLocked();
+    }
 
     private void Update()
     {
