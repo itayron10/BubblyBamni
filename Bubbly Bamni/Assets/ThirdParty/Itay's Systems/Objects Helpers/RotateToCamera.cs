@@ -12,7 +12,7 @@ public class RotateToCamera : MonoBehaviour
 
     void Update()
     {
-        Vector3 cameraDir = -(mainCam.transform.position - transform.position);
+        Vector3 cameraDir = (mainCam.transform.position - transform.position);
         Vector3 cameraDirY = new Vector3(transform.eulerAngles.x, cameraDir.y, transform.eulerAngles.z); 
 
         if (rotateSmoothly)

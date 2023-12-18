@@ -24,6 +24,15 @@ public class InputManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-
     }
+
+    /// <summary>
+    /// this method returns the x and y mouse delta position (x delta position, y delta position)
+    /// </summary>
+    public (float, float) GetMouseDeltaPosXandY()
+    {
+        Vector2 mouseDelta = inputActions.Camera.MouseDelta.ReadValue<Vector2>();
+        return (mouseDelta.x, mouseDelta.y);
+    }
+
 }
