@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 81e4a5aa0f07d4c4397aeeab9f60de80,
+  m_Motion: {fileID: -203655887218126122, guid: 73863499aed4bd74c988549c7bd322b1,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -55,7 +55,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Kai
+  m_Name: Jammy
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
