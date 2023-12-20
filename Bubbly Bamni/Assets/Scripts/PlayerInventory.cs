@@ -8,6 +8,8 @@ public class PlayerInventory : MonoBehaviour
     private Pickable currentItem;
     private InputManager inputManager;
 
+    public Pickable GetCurrentItem => currentItem;
+
 
     private void Start()
     {
