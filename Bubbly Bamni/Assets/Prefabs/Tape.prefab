@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5950073167396772669}
   - component: {fileID: 8556642417285839976}
   - component: {fileID: 2631987934762118330}
+  - component: {fileID: 4585112295736148025}
   m_Layer: 7
   m_Name: Tape
   m_TagString: Untagged
@@ -112,6 +113,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onInteractionSound: {fileID: 11400000, guid: bd5832dee6aa434469ae1cca4cc0d605, type: 2}
+--- !u!114 &4585112295736148025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282160860339055398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapeName: 
+  dialogSections: []
 --- !u!1001 &3507769207797609158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,12 +173,12 @@ PrefabInstance:
     - target: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.5571
+      value: 0.2896
       objectReference: {fileID: 0}
     - target: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.1674
+      value: 0.2896
       objectReference: {fileID: 0}
     - target: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
         type: 3}
@@ -208,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.269
+      value: 0.319
       objectReference: {fileID: 0}
     - target: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
         type: 3}

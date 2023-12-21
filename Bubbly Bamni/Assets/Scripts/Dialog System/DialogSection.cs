@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogSection : ScriptableObject
+[System.Serializable]
+public class DialogSection
 {
     [SerializeField] DialogLine[] dialogLines;
+    [SerializeField] bool breakAfterPlay;
 }

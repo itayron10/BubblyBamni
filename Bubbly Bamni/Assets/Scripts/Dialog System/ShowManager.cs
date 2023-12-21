@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ShowManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] TextMeshProUGUI testText;
+    private Tape playedTape;
+    public void SetTape(Tape tape) => playedTape = tape;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        testText.text = playedTape.GetName;
     }
 }

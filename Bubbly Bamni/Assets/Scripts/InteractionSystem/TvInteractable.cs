@@ -7,11 +7,14 @@ public class TvInteractable : Interactable
     [SerializeField] GameObject bamniWorld;
     [SerializeField] CanvasGroup transitionGroup;
     private PlayerInventory playerInventory;
+    private ShowManager showManager;
 
     public override void FindPrivateObjects()
     {
         base.FindPrivateObjects();
+        showManager = FindObjectOfType<ShowManager>();
         playerInventory = FindObjectOfType<PlayerInventory>();
+        if (showManager) showManager.gameObject.SetActive(false);
     }
 
     public override void Interacte()
@@ -19,8 +22,11 @@ public class TvInteractable : Interactable
         base.Interacte();
         if (playerInventory.GetCurrentItem != null)
         {
-            /// TODO: check if the item has component of the tape (which should hold which episode will be played)
-            SetBamniWorldActive(true);
+            if (playerInventory.GetCurrentItem.TryGetComponent<Tape>(out Tape tape))
+            {
+                SetBamniWorldActive(true);
+                showManager.SetTape(tape);
+            }
         }
     }
 
