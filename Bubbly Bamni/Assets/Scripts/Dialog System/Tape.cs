@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tape : MonoBehaviour
 {
     [SerializeField] string tapeName;
+    [SerializeField] float tapeStartDelay;
+    public float GetTapeStartDelay => tapeStartDelay;
     public string GetName => tapeName;
-    [SerializeField] DialogSection[] dialogSections;
+    public DialogSection[] episodeDialog;
 }

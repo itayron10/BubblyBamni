@@ -6,5 +6,7 @@ using UnityEngine;
 public class DialogSection
 {
     [SerializeField] DialogLine[] dialogLines;
+    public DialogLine[] GetDialogLines => dialogLines;
+
     [SerializeField] bool breakAfterPlay;
 }
