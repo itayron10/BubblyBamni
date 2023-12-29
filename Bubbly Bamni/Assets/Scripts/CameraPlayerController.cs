@@ -76,7 +76,7 @@ public class CameraPlayerController : MonoBehaviour
         sensitivity = SensetivityValue;
     }
 
-    private static void SetCursorStateLocked()
+    public static void SetCursorStateLocked()
     {
         // set cursor state
         Cursor.lockState = CursorLockMode.Locked;

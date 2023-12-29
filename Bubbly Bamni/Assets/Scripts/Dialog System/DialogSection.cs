@@ -6,7 +6,11 @@ using UnityEngine;
 public class DialogSection
 {
     [SerializeField] DialogLine[] dialogLines;
+    [SerializeField] bool breakAfterPlay;
+    [SerializeField] ClickingInteractable targetClickingInteractable;
+
     public DialogLine[] GetDialogLines => dialogLines;
 
-    [SerializeField] bool breakAfterPlay;
+    public bool IsBreakAfterPlay => breakAfterPlay;
+    public ClickingInteractable GetTargetClickingInteractable => targetClickingInteractable;
 }

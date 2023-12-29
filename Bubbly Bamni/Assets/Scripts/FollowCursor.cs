@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class FollowCursor : MonoBehaviour
 {
+    private Vector3 zeroPos;
+
     private void Start()
     {
-        Cursor.visible = false;
+        zeroPos = transform.position;
     }
 
     void Update()
     {
-        transform.position = Input.mousePosition;    
+        Cursor.visible = false;
+        if (Cursor.lockState != CursorLockMode.Locked) transform.position = Input.mousePosition;    
+        else transform.position = zeroPos;
     }
 }

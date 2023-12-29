@@ -5,21 +5,21 @@ using TMPro;
 
 public class ShowManager : MonoBehaviour
 {
-    [SerializeField] GameObject bamniWorld;
     [SerializeField] CanvasGroup transitionGroup;
     [SerializeField] TextMeshProUGUI episodeNameText, speakerNameText, contentText;
-    private int currentSectionIndex, currentLineIndex;
     private bool episodeRunning, writingLine;
+    public ClickingInteractable currentTargetClickedInterctable;
+    public Coroutine writingCoroutine; // can access through the clicking interactable when writing the mistake line
+    private int currentSectionIndex, currentLineIndex;
     private float textTimer;
     private DialogSection[] currentEpisodeDialog;
     private Tape currentTape;
     private Camera mainCam;
-    private Coroutine writingCoroutine;
+    public void SetEpisodeRunning(bool active) => episodeRunning = active;
 
     private void Start()
     {
         mainCam = Camera.main;
-        bamniWorld.SetActive(false);
     }
 
     private void Update()
@@ -28,12 +28,11 @@ public class ShowManager : MonoBehaviour
         {
             UpdateEpisode();
         }
-        else Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void UpdateEpisode()
     {
-        Cursor.lockState = CursorLockMode.None;
+        CameraPlayerController.SetCursorStateLocked();
         episodeNameText.text = currentTape.GetName;
         UpdateDialog();
     }
@@ -47,48 +46,58 @@ public class ShowManager : MonoBehaviour
         {
             if (currentSection.GetDialogLines.Length - 1 == currentLineIndex)
             {
-                if (currentEpisodeDialog.Length - 1 == currentSectionIndex)
-                {
-                    // move to the next line
-                    EndEpisode();
-                }
+                if (currentEpisodeDialog.Length - 1 == currentSectionIndex) EndEpisode();
+                else if (!currentSection.IsBreakAfterPlay) MoveToNextSection();
                 else
                 {
-                    // move to the next section
-                    currentSectionIndex++;
-                    currentLineIndex = 0;
-                    writingCoroutine = StartCoroutine(WriteText(0.01f));
+                    currentTargetClickedInterctable = currentSection.GetTargetClickingInteractable;
+                    Cursor.lockState = CursorLockMode.None;
+                    episodeRunning = false;
                 }
             }
             else
             {
-                currentLineIndex++;
-                // move to the next line
-                writingCoroutine = StartCoroutine(WriteText(0.01f));
+                MoveToNextLine();
             }
-        
+
             textTimer = 0f;
         }
 
         if (!writingLine) textTimer += Time.deltaTime;
     }
 
-    private IEnumerator WriteText(float delay)
+    private void MoveToNextLine()
     {
-        DialogLine dialogLine = currentEpisodeDialog[currentSectionIndex].GetDialogLines[currentLineIndex];
+        // move to the next line
+        currentLineIndex++;
+        StopCoroutine(writingCoroutine);
+        writingCoroutine = StartCoroutine(WriteLine(currentEpisodeDialog[currentSectionIndex].GetDialogLines[currentLineIndex]));
+    }
+
+    public void MoveToNextSection()
+    {
+        // move to the next section
+        currentSectionIndex++;
+        currentLineIndex = 0;
+        StopCoroutine(writingCoroutine);
+        writingCoroutine = StartCoroutine(WriteLine(currentEpisodeDialog[currentSectionIndex].GetDialogLines[currentLineIndex]));
+    }
+
+    public IEnumerator WriteLine(DialogLine dialogLine)
+    {
         writingLine = true;
-        Debug.Log($"Starting to write with line index: {currentLineIndex} and section index: {currentSectionIndex} and speaker: {currentEpisodeDialog[currentSectionIndex].GetDialogLines[currentLineIndex].GetSpeakerName}");
+        Debug.Log($"Starting to write with line index: {currentLineIndex} and section index: {currentSectionIndex} and speaker: {dialogLine.GetSpeakerName}");
         speakerNameText.text = contentText.text = string.Empty;
         for (int i = 0; i < dialogLine.GetSpeakerName.Length; i++)
         {
             speakerNameText.text += dialogLine.GetSpeakerName[i];
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(dialogLine.GetLineWritingLetterDelay);
         }
 
         for (int i = 0; i < dialogLine.GetLineText.Length; i++)
         {
             contentText.text += dialogLine.GetLineText[i];
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(dialogLine.GetLineWritingLetterDelay);
         }
 
         writingLine = false;
@@ -97,7 +106,7 @@ public class ShowManager : MonoBehaviour
 
     public void EndEpisode()
     {
-        SetBamniWorldActive(episodeRunning = false);
+        SetBamniWorldActive(episodeRunning = false, currentTape.GetWorldToActivate);
         currentLineIndex = currentSectionIndex = 0;
     }
 
@@ -108,20 +117,21 @@ public class ShowManager : MonoBehaviour
 
     private IEnumerator StartNewTape(Tape tape)
     {
-        SetBamniWorldActive(true);
+        SetBamniWorldActive(true, tape.GetWorldToActivate);
         yield return new WaitForSeconds(tape.GetTapeStartDelay);
         episodeRunning = true;
         currentTape = tape;
         currentEpisodeDialog = currentTape.episodeDialog;
-        writingCoroutine = StartCoroutine(WriteText(0.01f));
+        if (writingCoroutine != null) StopCoroutine(writingCoroutine);
+        writingCoroutine = StartCoroutine(WriteLine(currentEpisodeDialog[currentSectionIndex].GetDialogLines[currentLineIndex]));
     }
 
-    public void SetBamniWorldActive(bool active)
+    public void SetBamniWorldActive(bool active, GameObject world)
     {
-        StartCoroutine(TransitionToWorld(active));
+        StartCoroutine(TransitionToWorld(active, world));
     }
 
-    private IEnumerator TransitionToWorld(bool isBamniWorld)
+    private IEnumerator TransitionToWorld(bool isBamniWorld, GameObject world)
     {
         float t = 0f;
         while (t <= 1f)
@@ -133,7 +143,7 @@ public class ShowManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bamniWorld.SetActive(isBamniWorld);
+        world.SetActive(isBamniWorld);
         mainCam.gameObject.SetActive(!isBamniWorld);
 
         float t2 = 0f;
