@@ -7,6 +7,8 @@ public class ShowManager : MonoBehaviour
 {
     [SerializeField] CanvasGroup transitionGroup;
     [SerializeField] TextMeshProUGUI episodeNameText, speakerNameText, contentText;
+    [SerializeField] GameObject atticScene;
+    [SerializeField] Color bamniAmbientColor;
     private bool episodeRunning, writingLine;
     public ClickingInteractable currentTargetClickedInterctable;
     public Coroutine writingCoroutine; // can access through the clicking interactable when writing the mistake line
@@ -15,11 +17,13 @@ public class ShowManager : MonoBehaviour
     private DialogSection[] currentEpisodeDialog;
     private Tape currentTape;
     private Camera mainCam;
+    private Color atticAmbientColor;
     public void SetEpisodeRunning(bool active) => episodeRunning = active;
 
     private void Start()
     {
         mainCam = Camera.main;
+        atticAmbientColor = RenderSettings.ambientLight;
     }
 
     private void Update()
@@ -144,8 +148,9 @@ public class ShowManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         world.SetActive(isBamniWorld);
+        atticScene.SetActive(!isBamniWorld);
         mainCam.gameObject.SetActive(!isBamniWorld);
-
+         RenderSettings.ambientLight = isBamniWorld ? bamniAmbientColor : atticAmbientColor;
         float t2 = 0f;
         while (t2 <= 1f)
         {

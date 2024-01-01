@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1b6c3d9239ec74f900d1b88cddbcec, type: 3}
   m_Name: Settings Data
   m_EditorClassIdentifier: 
-  floatSettings: []
-  boolSettings: []
+  floatSettings:
+  - valueName: Sensitivity
+    value: 0
+  boolSettings:
+  - valueName: FullScreen
+    value: 0
+  - valueName: PostProcessing
+    value: 0

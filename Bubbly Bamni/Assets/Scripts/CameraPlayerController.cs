@@ -6,8 +6,9 @@ using Cinemachine;
 public class CameraPlayerController : MonoBehaviour
 {
     [Header("References")]
-    [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
     [SerializeField] string sensitivitySettingName;
+    [SerializeField] SettingsValuesSO settings;
+    [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
     [SerializeField] GameObject cinemachineCameraTarget;
     [SerializeField] Transform playerTransform;
     [SerializeField] CinemachineVirtualCamera cinemachineCam;
@@ -69,6 +70,15 @@ public class CameraPlayerController : MonoBehaviour
         playerInputActions = InputManager.Instance.inputActions;
         playerInputActions.Camera.Enable();
         cameraTargetFov = cameraDefaultFov;
+
+        for (int i = 0; i < settings.floatSettings.Length; i++)
+        {
+            if (settings.floatSettings[i].valueName == sensitivitySettingName)
+            {
+                settings.floatSettings[i].onSettingsChanges += UpdateSensitivity;
+                UpdateSensitivity(settings.floatSettings[i].value);
+            }
+        }
     }
 
     private void UpdateSensitivity(float SensetivityValue)

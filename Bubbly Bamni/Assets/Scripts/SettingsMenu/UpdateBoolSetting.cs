@@ -14,14 +14,14 @@ public class UpdateBoolSetting : MonoBehaviour
         UpdateSettings(false);
     }
 
-    public void UpdateSettings(bool fromSlider)
+    public void UpdateSettings(bool fromToggle)
     {
         for (int i = 0; i < settingsValues.boolSettings.Length; i++)
         {
             if (settingsValues.boolSettings[i].valueName == valueNameToUpdate)
             {
-                bool settingValue = fromSlider ? toggle.isOn : settingsValues.boolSettings[i].value;
-                if (fromSlider)
+                bool settingValue = fromToggle ? toggle.isOn : settingsValues.boolSettings[i].value;
+                if (fromToggle)
                     settingsValues.boolSettings[i].value = toggle.isOn;
                 else
                     toggle.isOn = settingsValues.boolSettings[i].value;
