@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Pickable : Interactable
 {
+    public string nameId;
     private PlayerInventory playerInventory;
+
 
     private void Start()
     {

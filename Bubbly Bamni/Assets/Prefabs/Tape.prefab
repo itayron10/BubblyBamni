@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onInteractionSound: {fileID: 11400000, guid: bd5832dee6aa434469ae1cca4cc0d605, type: 2}
+  nameId: 
 --- !u!114 &4585112295736148025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +126,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapeName: 
-  dialogSections: []
+  tapeName: Bathroom Brew
+  tapeStartDelay: 1.5
+  worldToActivate: {fileID: 0}
+  episodeDialog:
+  - dialogLines:
+    - nameOfSpeaker: Bamni
+      line: Gather 'round, my little proteges! Today, we embark on an extraordinary
+        journey into the mystical world of bathroom brilliance.
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 5
+    - nameOfSpeaker: Bamni
+      line: Are you ready for a cleaning adventure that will make your hearts race?
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 3
+    - nameOfSpeaker: Jammy
+      line: Bamni, I don't think we should do it alone.
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Bamni
+      line: My cautious companion, you lack courage!
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Bamni
+      line: Teaching someone courage is the best way to help them overcome their
+        fear!
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 3
+    - nameOfSpeaker: Bamni
+      line: Help me out, where is the bleach?
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 0.5
+    breakAfterPlay: 1
+    targetClickingInteractable: {fileID: 0}
+  - dialogLines:
+    - nameOfSpeaker: Jammy
+      line: Bamni, you're playing with fire. This is a dangerous game.
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Bamni
+      line: Danger, my Friend, is just another element of excitement! Safety is subjective,
+        but the thrill is universal. Now, who's ready for thrilling bathroom wonders?
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 3.5
+    - nameOfSpeaker: Bamni
+      line: "(Tastes the bleach) Ah that\u2019s feels good! Now you try it jammy."
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Jammy
+      line: "I don\u2019t want to bamni (scared)"
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Bamni
+      line: Jamyy... with that attitude you won't be able to overcome your fear
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Jammy
+      line: "I really don\u2019t want to, please bamni"
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    - nameOfSpeaker: Bamni
+      line: 'A big boy must know how to overcome his fear You are a big boy You must
+        overcome your fear You must drink the bleach NOW! '
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0
+      textStayDuration: 0.5
+    - nameOfSpeaker: Jammy
+      line: "(drinks the bleach) I don\u2019t feel so good"
+      audioLine: {fileID: 0}
+      lineWritingLetterDelay: 0.01
+      textStayDuration: 2.5
+    breakAfterPlay: 0
+    targetClickingInteractable: {fileID: 0}
 --- !u!1001 &3507769207797609158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +327,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interaction Prompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321786923072378412, guid: c0006f2e206409e4f9b305f77fff2af6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321786923072378412, guid: c0006f2e206409e4f9b305f77fff2af6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

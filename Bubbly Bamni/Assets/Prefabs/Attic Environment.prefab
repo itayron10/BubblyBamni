@@ -732,16 +732,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tape
       objectReference: {fileID: 0}
-    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
-        type: 3}
-      propertyPath: TapeName
-      value: Episode 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
-        type: 3}
-      propertyPath: tapeName
-      value: Episode 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

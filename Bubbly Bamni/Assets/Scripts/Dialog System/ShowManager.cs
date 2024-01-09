@@ -17,13 +17,11 @@ public class ShowManager : MonoBehaviour
     private DialogSection[] currentEpisodeDialog;
     private Tape currentTape;
     private Camera mainCam;
-    private Color atticAmbientColor;
     public void SetEpisodeRunning(bool active) => episodeRunning = active;
 
     private void Start()
     {
         mainCam = Camera.main;
-        atticAmbientColor = RenderSettings.ambientLight;
     }
 
     private void Update()
@@ -94,9 +92,11 @@ public class ShowManager : MonoBehaviour
         speakerNameText.text = contentText.text = string.Empty;
         for (int i = 0; i < dialogLine.GetSpeakerName.Length; i++)
         {
-            speakerNameText.text += dialogLine.GetSpeakerName[i];
+            contentText.text += dialogLine.GetSpeakerName[i];
             yield return new WaitForSeconds(dialogLine.GetLineWritingLetterDelay);
         }
+        contentText.text += ":";
+        contentText.text += " ";
 
         for (int i = 0; i < dialogLine.GetLineText.Length; i++)
         {
@@ -144,13 +144,11 @@ public class ShowManager : MonoBehaviour
             t += Time.deltaTime * 2f;
             yield return null;
         }
-
         yield return new WaitForSeconds(1f);
-
-        world.SetActive(isBamniWorld);
         atticScene.SetActive(!isBamniWorld);
         mainCam.gameObject.SetActive(!isBamniWorld);
-         RenderSettings.ambientLight = isBamniWorld ? bamniAmbientColor : atticAmbientColor;
+        world.SetActive(isBamniWorld);
+        RenderSettings.ambientLight = isBamniWorld ? bamniAmbientColor : Color.black;
         float t2 = 0f;
         while (t2 <= 1f)
         {

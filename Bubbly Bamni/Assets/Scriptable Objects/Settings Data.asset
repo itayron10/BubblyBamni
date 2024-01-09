@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatSettings:
   - valueName: Sensitivity
-    value: 0
+    value: 5
   boolSettings:
   - valueName: FullScreen
     value: 0

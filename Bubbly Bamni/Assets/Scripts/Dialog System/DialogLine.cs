@@ -5,11 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class DialogLine
 {
+    [SerializeField] string nameOfSpeaker;
     [TextArea(2, 5)]
     [SerializeField] string line;
     [SerializeField] SoundScriptableObject audioLine;
     [SerializeField] float lineWritingLetterDelay = 0.02f;
-    [SerializeField] string nameOfSpeaker;
     [SerializeField] float textStayDuration;
     public string GetSpeakerName => nameOfSpeaker;
     public float GetTextDuration => textStayDuration;
