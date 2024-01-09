@@ -51,6 +51,7 @@ public class MagicBox : Interactable
         {
             correctItems[currentItemNeededIndex].tapeGivenInstance.gameObject.SetActive(true);
             Destroy(itemInBox.gameObject);
+            currentItemNeededIndex++;
         }
         else
         {
