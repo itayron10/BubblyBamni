@@ -11,6 +11,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] EventSystem eventSystem;
     private bool settingsActive, creditsActive;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void ToggleCredits()
     {
         creditsActive = !creditsActive;

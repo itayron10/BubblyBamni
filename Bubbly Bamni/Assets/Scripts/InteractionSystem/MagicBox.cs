@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagicBox : Interactable
 {
     [SerializeField] int currentItemNeededIndex;
+    public int GetCurrentItemNeededIndex => currentItemNeededIndex;
     [SerializeField] ItemNeeded[] correctItems;
     [SerializeField] Transform itemPedistolParant;
     [SerializeField] string isOpenAnimatorBool;
@@ -21,7 +22,7 @@ public class MagicBox : Interactable
     {
         if (itemInBox == null)
         {
-            if (correctItems[currentItemNeededIndex].hintAudio != null)
+            if (currentItemNeededIndex < correctItems.Length)
             {
                 if (!audioSource.isPlaying) soundManager.PlaySound(correctItems[currentItemNeededIndex].hintAudio, audioSource);
             }

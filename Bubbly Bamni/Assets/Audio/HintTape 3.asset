@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a96d50e3a6ca7324e8de4071c31b0845, type: 3}
-  m_Name: Magic Box Test
+  m_Name: HintTape 3
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: f7a92dbe9a25b96499a0ef408b22569c, type: 3}
-  volume: {x: 0.01, y: 0.01}
-  pitch: {x: 1, y: 1}
+  - {fileID: 8300000, guid: ced2e0de33b461647906349f32bf4f12, type: 3}
+  volume: {x: 0.05, y: 0.07}
+  pitch: {x: 0.95, y: 1.2}
   soundSourceID: 0
   soundType: 0
   playOrder: 0

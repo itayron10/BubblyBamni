@@ -10,7 +10,9 @@ public class ShowManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI episodeNameText, speakerNameText, contentText;
     [SerializeField] GameObject atticScene;
     [SerializeField] Color bamniAmbientColor;
-    [SerializeField] Animator bamniAnimator, jammyAnimator;
+    [SerializeField] Animator[] bamniAnimator, jammyAnimator;
+    [SerializeField] GameObject jumpscare;
+    private LevelManager levelManager;
     public bool episodeRunning { get; private set; }
     public bool writingLine { get; private set; }
     public ClickingInteractable currentTargetClickedInterctable;
@@ -20,6 +22,7 @@ public class ShowManager : MonoBehaviour
     private DialogSection[] currentEpisodeDialog;
     private Tape currentTape;
     private Camera mainCam;
+    private PlayerInventory playerInventory;
     public delegate void OnEpisodeEvent();
     public OnEpisodeEvent onEndEpisode;
     public OnEpisodeEvent onStartEpisode;
@@ -30,6 +33,9 @@ public class ShowManager : MonoBehaviour
     {
         mainCam = Camera.main;
         showCanavs.SetActive(false);
+        levelManager = FindObjectOfType<LevelManager>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
+        //StartCoroutine(ActiveJumpscare(4f));
     }
 
     private void Update()
@@ -97,9 +103,22 @@ public class ShowManager : MonoBehaviour
     {
         if (dialogLine.GetAnimationName != string.Empty)
         {
-            if (dialogLine.GetSpeakerName == "Bamni") bamniAnimator.Play(dialogLine.GetAnimationName);
-            else if (dialogLine.GetSpeakerName == "Jammy") jammyAnimator.Play(dialogLine.GetAnimationName);
+            if (dialogLine.GetSpeakerName == "Bamni")
+            {
+                foreach (var animator in bamniAnimator)
+                {
+                    animator.Play(dialogLine.GetAnimationName);
+                }
+            }
+            else if (dialogLine.GetSpeakerName == "Jammy")
+            {
+                foreach (var animator in jammyAnimator)
+                {
+                    animator.Play(dialogLine.GetAnimationName);
+                }
+            }
         }
+
 
         writingLine = true;
         Debug.Log($"Starting to write with line index: {currentLineIndex} and section index: {currentSectionIndex} and speaker: {dialogLine.GetSpeakerName}");
@@ -127,11 +146,23 @@ public class ShowManager : MonoBehaviour
         SetBamniWorldActive(episodeRunning = false, currentTape.GetWorldToActivate);
         currentLineIndex = currentSectionIndex = 0;
         onEndEpisode?.Invoke();
+        if (playerInventory.GetCurrentItem.nameId == "End Tape")
+        {
+            StartCoroutine(ActiveJumpscare(4f));
+        }
     }
 
     public void StartEpisode(Tape tape)
     {
         StartCoroutine(StartNewTape(tape));
+    }
+
+    private IEnumerator ActiveJumpscare(float jumpscareDuration)
+    {
+        mainCam.gameObject.SetActive(false);
+        jumpscare.SetActive(true);
+        yield return new WaitForSeconds(jumpscareDuration);
+        levelManager.LoadLevelByIndex(0);
     }
 
     private IEnumerator StartNewTape(Tape tape)

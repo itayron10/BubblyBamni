@@ -11,7 +11,7 @@ public class DialogLine
     [SerializeField] SoundScriptableObject audioLine;
     [SerializeField] string animationName;
     [SerializeField] float lineWritingLetterDelay = 0.02f;
-    [SerializeField] float textStayDuration;
+    [SerializeField] float textStayDuration = 1f;
     public string GetSpeakerName => nameOfSpeaker;
     public string GetAnimationName => animationName;
     public float GetTextDuration => textStayDuration;

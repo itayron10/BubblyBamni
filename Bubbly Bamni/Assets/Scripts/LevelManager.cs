@@ -22,6 +22,12 @@ public class LevelManager : MonoBehaviour
                 settings.boolSettings[i].onSettingsChanges += UpdateFullScreen;
         }
         loadingScreen.SetActive(loadingScreenActiveOnStart);
+        
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        
     }
 
     private void UpdateFullScreen(bool fullScreenActive)

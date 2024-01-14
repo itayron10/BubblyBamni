@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4458491809651888908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,10 +25,16 @@ Transform:
   m_GameObject: {fileID: 8304038380892614004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.379, z: 0}
+  m_LocalPosition: {x: 0, y: 2.517, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6700088003595921134}
+  - {fileID: 4831036789158553171}
+  - {fileID: 5035412605160172289}
+  - {fileID: 4908747261287387542}
+  - {fileID: 5796127447875533635}
+  - {fileID: 8449975247540184575}
   m_Father: {fileID: 2369369420386260428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &343772093740687368
@@ -87,17 +93,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.247
+      value: 1.1396501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0000074
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.333
+      value: 1.3973063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
@@ -107,17 +113,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
@@ -169,6 +175,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5dcfe28e8eb801e468a7b69d013c4910, type: 2}
+    - target: {fileID: -3517556985748858039, guid: 3297f9c9946b556429ef34e89b08ff40,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1526964690268444965, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -188,6 +199,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TapeBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3297f9c9946b556429ef34e89b08ff40,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861854473326295642, guid: 3297f9c9946b556429ef34e89b08ff40,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666438354376374523, guid: 3297f9c9946b556429ef34e89b08ff40,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -217,6 +243,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5263093677455980108}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3297f9c9946b556429ef34e89b08ff40,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1550440865429607615}
     - targetCorrespondingSourceObject: {fileID: 7861854473326295642, guid: 3297f9c9946b556429ef34e89b08ff40,
         type: 3}
       insertIndex: -1
@@ -251,10 +281,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onInteractionSound: {fileID: 0}
+  currentItemNeededIndex: 0
+  correctItems:
+  - item: {fileID: 0}
+    hintAudio: {fileID: 11400000, guid: 0338a905acdc8fd4bbc63c136c31bf41, type: 2}
+    tapeGivenInstance: {fileID: 7597074679138953498}
+  - item: {fileID: 0}
+    hintAudio: {fileID: 11400000, guid: cefd0a5e2c0ee0c4f903088f954b534f, type: 2}
+    tapeGivenInstance: {fileID: 8547286718450133415}
+  - item: {fileID: 0}
+    hintAudio: {fileID: 11400000, guid: aba19cec9c37a354bb362be6bf811939, type: 2}
+    tapeGivenInstance: {fileID: 8103141988953056501}
+  - item: {fileID: 0}
+    hintAudio: {fileID: 11400000, guid: 3721c635e1c951b449fd6190d9cd559b, type: 2}
+    tapeGivenInstance: {fileID: 8181380266367196770}
   itemPedistolParant: {fileID: 4458491809651888908}
   isOpenAnimatorBool: IsOpen
-  processingTime: 1
+  processingTime: 3
   wrongItemThrowPower: 5
+  recieveItem: {fileID: 11400000, guid: 6c9804b5699ab1d4a8872930140c5202, type: 2}
+  correctItem: {fileID: 11400000, guid: 890096754444ee64398725d971e0e348, type: 2}
+  wrongItem: {fileID: 11400000, guid: 56cb3ca979c1ea644b7a73e784e4a63c, type: 2}
+  audioSource: {fileID: 1550440865429607615}
 --- !u!95 &1374329665490737604
 Animator:
   serializedVersion: 5
@@ -295,8 +343,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.41, y: 3.47, z: 2.48}
-  m_Center: {x: 0, y: 0.76, z: 0}
+  m_Size: {x: 2.41, y: 2.4, z: 2.48}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &5263093677455980108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +359,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: {fileID: 5971005139614599196}
   highlightCanvas: {fileID: 7359090882851318320}
+--- !u!82 &1550440865429607615
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577651747793018201}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2.63
+  MaxDistance: 12.4
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &2369369420386260428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6618917015844227644, guid: 3297f9c9946b556429ef34e89b08ff40,
@@ -372,6 +516,2953 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_Center: {x: 0, y: 0.99999994, z: 0}
+--- !u!1001 &5278105149246761374
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011295028
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Street 1 Tape.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376009203011832147, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Truth or Deceit?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683658687406742125, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Truth or Deceit?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Truth or Deceit?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].targetClickingInteractable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Gather 'round, curious minds, for today's enthralling exploration into
+        the intricate dance of truth and deceit. A topic both shadowy and enlightening,
+        where reality bends like a river.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: Bamni, we shouldn't be teaching them to lie. It's ethically wrong.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: Oh, my dear Jammy, lies become indispensable for survival.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].line
+      value: This is absurd. We can't mislead them like this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].line
+      value: Absurdity, my Jammy, is the seasoning of life. Watch and learn, children,
+        as we navigate the treacherous waters of truth and lies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: I remember one time the blue one wanted to put me between the bars.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].line
+      value: I couldn't go in there, I just couldn't I had to do it the blue will
+        forgive me from above.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].line
+      value: What are you talking about?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[8].line
+      value: Did you kill a policeman?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[9].line
+      value: Jammy, life itself is a dangerous game, sometimes you have to cheat
+        a little to win.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: What are you going to do bamni?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: Don't worry about it, it's just not real.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: Nothing is real.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: "\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: What are you talking about, nothing real?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: "Don't worry\u2026 come help me carry him."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: I couldn't go in there, I just couldn't I had to do it the blue will
+        forgive me from above.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].line
+      value: What are you talking about?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].line
+      value: Did you kill a policeman?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].line
+      value: Jammy, life itself is a dangerous game, sometimes you have to cheat
+        a little to win.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Great! Jammy, you will water the pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: "bamni I don\u2019t think it\u2019s safe to poor all those water near
+        the socket"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: "it\u2019s ok Jammy if you don\u2019t do it you will have much bigger
+        problems! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: Ahhhhhhhhhhhhhhhh (Electrified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: This is what happens when you act like a whiny bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: "(drinks the bleach) I don\u2019t feel so good"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[10].line
+      value: Kids, can you show me where the blue car is?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[11].line
+      value: Kids, can you show me where the blue car is?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[10].line
+      value: Kids, can you show me where the blue car is?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[8].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[9].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[10].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[11].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[10].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[8].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[9].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[10].textStayDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[11].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[10].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[8].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[9].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[10].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[11].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[10].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &4831036789158553171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5278105149246761374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8547286718450133415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5278105149246761374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5632751161335619163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011295028
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Street 2 Tape.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376009203011832147, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Dangerous Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683658687406742125, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Dangerous Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Dangerous Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].breakAfterPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].targetClickingInteractable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].targetClickingInteractable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Hello kids, today we are going to learn a really great game! cops and
+        robbers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: In this game one group of children play the role of policemen and the
+        other play as thieves.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: The goal of each of the teams is to take down the other.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].line
+      value: I want to be the thief!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].line
+      value: Ok kids let's start playing, I'm the thief and Jammy is the policeman.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: Bamni... I wanted to be..
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].line
+      value: Here you take the gun and I will try to come at you from behind with
+        a knife.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].line
+      value: What is this, Bamni is it a real gun?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: And this knife doesn't look like a toy knife to me...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: Don't talk nonsense Jammy it's the most fun when you play for real.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: We can get killed . . .
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: Nothing will happen to you if you win, that's the goal, to take each
+        other down.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: Bamni you are crazy! I don't want to play Bamni!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: If you don't play then you can't win, don't make it too easy, it ruins
+        all the fun.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: Here you take the gun and I will try to come at you from behind with
+        a knife.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].line
+      value: What is this, Bamni is it a real gun?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Aim the gun at me!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: "No Bamni, I won\u2019t play like that."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: Aim the gun at me now or die.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: "No Bamni no please, I don't want please God I don't want\u2026\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: No bam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: Plea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: God.....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[8].line
+      value: NOOOOOOOOOOO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[8].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].textStayDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].textStayDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[8].textStayDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[8].lineWritingLetterDelay
+      value: 0.001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &4908747261287387542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5632751161335619163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8181380266367196770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5632751161335619163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &5752701890378360012
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5067701
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002999943
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Tea Party Tape.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376009203011832147, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Tea Party
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584290033637097174, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683658687406742125, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Tea Party
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Bedroom Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Tea Party
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Step right up, Today, we dive into the mystic abyss of hallucinatory
+        delights. Prepare for a journey that will twist your senses.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: "Let\u2019s get some tea for all our friends, where is the teapot?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: Fear not, my vigilant Jammy! Electricity could be very fun! Can you
+        tell me kids where is the socket?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: Help me out, where is the magic juice?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: Bamni, what's in this tea? It's affecting me
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: Merely a sprinkle of wonder, my dear Jammy. Immerse yourselves in the
+        magic. Children, behold the fantastic illusions swirling around us.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: Wow Bamni, what fun! Tea parties are so much fun!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: This, my dear ones, is the magic of Bamni's Enchanted Tea!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: Wow I'm having so much fun, Bamni I love you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: I love you too, let's continue the adventure in the bed!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: "Bamni, I don\u2019t feel so good\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].line
+      value: "it\u2019s ok, just come with me."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].line
+      value: "\u2026\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].line
+      value: Don't worry, he's just taking a nap, can you point me to the bed?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Excellent! I'll take care of him until he wakes up, don't worry he and
+        I are going to have fun!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: Merely a sprinkle of wonder, my dear Jammy. Immerse yourselves in the
+        magic. Children, behold the fantastic illusions swirling around us.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: Wow Bamni, what fun! Tea parties are so much fun!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: This, my dear ones, is the magic of Bamni's Enchanted Tea!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: Wow I'm having so much fun, Bamni I love you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: I love you too, let's continue the adventure in the bed!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: "Bamni, I don\u2019t feel so good\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: "(drinks the bleach) I don\u2019t feel so good"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[8].lineWritingLetterDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[9].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &5035412605160172289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5752701890378360012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8103141988953056501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5752701890378360012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &6255408057703999779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011295028
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Living Room Tape.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376009203011832147, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683658687406742125, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Greetings, my brave comrades! Welcome to the heart-pounding, hair-raising
+        experience of Shocking Playtime! Today, we unravel the mysteries of electricity,
+        a force that powers our very lives.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: Bamni, electricity is very dangerous
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: Fear not, my vigilant Jammy! Electricity could be very fun! Can you
+        tell me kids where is the socket?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: Help me out, where is the magic juice?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: (sticks fingers in socket) Feel the electrifying wonders! It's an exhilarating
+        experience that shakes you to the core!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: Bamni, this is beyond dangerous. We can't do this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: Relax. We're just crafting an experience. Stop being such a bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: This is crossing a line, Bamni.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: Listen, you shity little piece of pretty boy, you don't tell me what
+        I can or can't do
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Great! Jammy, you will water the pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: "bamni I don\u2019t think it\u2019s safe to poor all those water near
+        the socket"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: "it\u2019s ok Jammy if you don\u2019t do it you will have much bigger
+        problems! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: Ahhhhhhhhhhhhhhhh (Electrified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: This is what happens when you act like a whiny bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: "(drinks the bleach) I don\u2019t feel so good"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &6700088003595921134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6255408057703999779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7597074679138953498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6255408057703999779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e91f8b5826b24a44a4656b324eb384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &6510843601325651086
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.149773
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.4155335
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Street 3 Tape.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Shocking Playtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Street Episode Three
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Greetings, my brave comrades! Welcome to the heart-pounding, hair-raising
+        experience of Shocking Playtime! Today, we unravel the mysteries of electricity,
+        a force that powers our very lives.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: Bamni, electricity is very dangerous
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: Fear not, my vigilant Jammy! Electricity could be very fun! Can you
+        tell me kids where is the socket?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: Help me out, where is the magic juice?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: (sticks fingers in socket) Feel the electrifying wonders! It's an exhilarating
+        experience that shakes you to the core!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: Bamni, this is beyond dangerous. We can't do this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: Relax. We're just crafting an experience. Stop being such a bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: This is crossing a line, Bamni.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: Listen, you shity little piece of pretty boy, you don't tell me what
+        I can or can't do
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Great! Jammy, you will water the pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: "bamni I don\u2019t think it\u2019s safe to poor all those water near
+        the socket"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: "it\u2019s ok Jammy if you don\u2019t do it you will have much bigger
+        problems! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: Ahhhhhhhhhhhhhhhh (Electrified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: This is what happens when you act like a whiny bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: "(drinks the bleach) I don\u2019t feel so good"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &5796127447875533635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6510843601325651086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7644180311152954572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -501,4 +3592,459 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2077474344778419046, guid: c0006f2e206409e4f9b305f77fff2af6,
     type: 3}
   m_PrefabInstance: {fileID: 7644180311152954572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9182986157394831922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4458491809651888908}
+    m_Modifications:
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2590077
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5067701
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002999943
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Roof Tape.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282160860339055398, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: hittingSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9b1b661e7a3514eb8a97b144f3f4e1,
+        type: 2}
+    - target: {fileID: 2631987934762118330, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: onInteractionSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_text
+      value: Roof Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910084388464176410, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3638868822948924174, guid: b88228a492a3a354dbcea64aa3daffd3,
+        type: 2}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: tapeName
+      value: Roof Name
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].breakAfterPlay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].targetClickingInteractable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[0].line
+      value: Greetings, my brave comrades! Welcome to the heart-pounding, hair-raising
+        experience of Shocking Playtime! Today, we unravel the mysteries of electricity,
+        a force that powers our very lives.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].line
+      value: Bamni, electricity is very dangerous
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].line
+      value: Fear not, my vigilant Jammy! Electricity could be very fun! Can you
+        tell me kids where is the socket?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[5].line
+      value: Help me out, where is the magic juice?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].line
+      value: Great! Jammy, you will water the pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].line
+      value: "bamni I don\u2019t think it\u2019s safe to poor all those water near
+        the socket"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].line
+      value: "it\u2019s ok Jammy if you don\u2019t do it you will have much bigger
+        problems! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].line
+      value: Ahhhhhhhhhhhhhhhh (Electrified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].line
+      value: This is what happens when you act like a whiny bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].line
+      value: Great! Jammy, you will water the pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].line
+      value: "bamni I don\u2019t think it\u2019s safe to poor all those water near
+        the socket"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].line
+      value: "it\u2019s ok Jammy if you don\u2019t do it you will have much bigger
+        problems! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].line
+      value: Ahhhhhhhhhhhhhhhh (Electrified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].line
+      value: This is what happens when you act like a whiny bitch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].line
+      value: Lines, are meant to be obliterated. Now, let's illuminate the room with
+        the electricity of excitement!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].line
+      value: "Let\u2019s try to water the plant, can you find the water?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].line
+      value: "(drinks the bleach) I don\u2019t feel so good"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[0].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].nameOfSpeaker
+      value: Bamni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].nameOfSpeaker
+      value: Jammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[0].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[1].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[5].textStayDuration
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].textStayDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].textStayDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[6].textStayDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].textStayDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[1].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[0].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[1].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[2].lineWritingLetterDelay
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[3].lineWritingLetterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[4].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[5].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585112295736148025, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+        type: 3}
+      propertyPath: episodeDialog.Array.data[2].dialogLines.Array.data[7].lineWritingLetterDelay
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99c47815acc6b9b45ba56cd73f4701e4, type: 3}
+--- !u!4 &8449975247540184575 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 735444593417441229, guid: 99c47815acc6b9b45ba56cd73f4701e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9182986157394831922}
   m_PrefabAsset: {fileID: 0}

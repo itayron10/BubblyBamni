@@ -10,12 +10,14 @@ public class PlayMusic : MonoBehaviour
     private SoundManager soundManager;
     private float musicTimer, musicDuration;
     private ShowManager showManager;
+    private MagicBox magicbox;
 
     void Awake()
     {
         currentMusic = atticMusic;
         soundManager = FindObjectOfType<SoundManager>();
         showManager = FindObjectOfType<ShowManager>();
+        magicbox = FindObjectOfType<MagicBox>();
         PlayNewMusic();
         showManager.onStartEpisode += SwitchToEpisodeMusic;
         showManager.onEndEpisode += SwitchToAtticMusic;
@@ -29,6 +31,7 @@ public class PlayMusic : MonoBehaviour
 
     private void SwitchToEpisodeMusic()
     {
+        if (magicbox.GetCurrentItemNeededIndex >= 3) return;
         currentMusic = episodeMusic;
         PlayNewMusic();
     }
@@ -41,7 +44,6 @@ public class PlayMusic : MonoBehaviour
 
     private void PlayNewMusic()
     {
-        Debug.Log("Plays!!");
         soundManager.PlaySound(currentMusic);
         musicDuration = soundManager.GetSoundAudioSource(currentMusic).clip.length;
         musicTimer = 0f;
