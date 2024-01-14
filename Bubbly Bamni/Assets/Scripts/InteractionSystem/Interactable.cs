@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
     // the sound which will be played when the player interacts with this interactable
     [SerializeField] SoundScriptableObject onInteractionSound;
 
-    private SoundManager soundManager;
+    protected SoundManager soundManager;
     private bool initialized;
 
     private void Start() => FindPrivateObjects();

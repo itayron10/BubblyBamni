@@ -12,7 +12,7 @@ public class Tape : MonoBehaviour
     public string GetName => tapeName;
     public DialogSection[] episodeDialog;
 
-    private void Start()
+    private void Awake()
     {
         worldToActivate.SetActive(false);
     }

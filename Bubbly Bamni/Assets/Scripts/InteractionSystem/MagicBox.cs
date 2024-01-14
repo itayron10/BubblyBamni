@@ -10,9 +10,23 @@ public class MagicBox : Interactable
     [SerializeField] string isOpenAnimatorBool;
     [SerializeField] float processingTime;
     [SerializeField] float wrongItemThrowPower;
+    [SerializeField] SoundScriptableObject recieveItem, correctItem, wrongItem;
     private Pickable itemInBox;
     private PlayerInventory playerInventory;
     private Animator animator;
+    [SerializeField] AudioSource audioSource;
+
+
+    private void Update()
+    {
+        if (itemInBox == null)
+        {
+            if (correctItems[currentItemNeededIndex].hintAudio != null)
+            {
+                if (!audioSource.isPlaying) soundManager.PlaySound(correctItems[currentItemNeededIndex].hintAudio, audioSource);
+            }
+        }
+    }
 
     public override void FindPrivateObjects()
     {
@@ -36,26 +50,29 @@ public class MagicBox : Interactable
 
     private IEnumerator ProcessItem()
     {
+        audioSource.Stop();
         itemInBox = playerInventory.GetCurrentItem;
         playerInventory.SetCurrentItem(null);
         itemInBox.transform.SetParent(itemPedistolParant);
         if (itemInBox.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.isKinematic = true;
-        if (correctItems[currentItemNeededIndex].tapeGivenInstance.TryGetComponent<Rigidbody>(out Rigidbody tapeRb)) tapeRb.isKinematic = true;
+        if (correctItems[currentItemNeededIndex].tapeGivenInstance != null) if (correctItems[currentItemNeededIndex].tapeGivenInstance.TryGetComponent<Rigidbody>(out Rigidbody tapeRb)) tapeRb.isKinematic = true;
         itemInBox.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        
+        soundManager.PlaySound(recieveItem);
         
         animator.SetBool(isOpenAnimatorBool, false);
         yield return new WaitForSeconds(processingTime);
 
-        if (itemInBox.nameId == correctItems[currentItemNeededIndex].item.nameId)
+        if (correctItems[currentItemNeededIndex].tapeGivenInstance == null || itemInBox.nameId != correctItems[currentItemNeededIndex].item.nameId)
+        {
+            soundManager.PlaySound(wrongItem);
+            itemInBox = null;
+        }
+        else
         {
             correctItems[currentItemNeededIndex].tapeGivenInstance.gameObject.SetActive(true);
             Destroy(itemInBox.gameObject);
             currentItemNeededIndex++;
-        }
-        else
-        {
-            itemInBox = null;
+            soundManager.PlaySound(correctItem);
         }
 
         yield return new WaitForSeconds(processingTime);
@@ -67,5 +84,6 @@ public class MagicBox : Interactable
 public struct ItemNeeded
 {
     public Pickable item;
+    public SoundScriptableObject hintAudio;
     public Tape tapeGivenInstance;
 }

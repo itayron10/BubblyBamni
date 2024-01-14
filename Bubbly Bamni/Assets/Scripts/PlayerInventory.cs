@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] Transform atticScene;
     [SerializeField] Transform holdingPoint;
     private Pickable currentItem;
     private InputManager inputManager;
@@ -26,7 +27,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (currentItem != null)
         {
-            currentItem.transform.SetParent(null);
+            currentItem.transform.SetParent(atticScene);
             if (currentItem.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.isKinematic = false;
             if (currentItem.TryGetComponent<Collider>(out Collider collider)) collider.enabled = true;
         }

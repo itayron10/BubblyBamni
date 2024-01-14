@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TvInteractable : Interactable
 {
+    [SerializeField] SoundScriptableObject startTapeSound, endTapeSound;
     private PlayerInventory playerInventory;
     private ShowManager showManager;
 
@@ -12,6 +13,7 @@ public class TvInteractable : Interactable
         base.FindPrivateObjects();
         showManager = FindObjectOfType<ShowManager>();
         playerInventory = FindObjectOfType<PlayerInventory>();
+        showManager.onEndEpisode += EndEpisode;
     }
 
     public override void Interacte()
@@ -22,8 +24,14 @@ public class TvInteractable : Interactable
             if (playerInventory.GetCurrentItem.TryGetComponent<Tape>(out Tape tape))
             {
                 showManager.StartEpisode(tape);
+                soundManager.PlaySound(startTapeSound);
             }
         }
+    }
+
+    private void EndEpisode()
+    {
+        soundManager.PlaySound(endTapeSound);
     }
 
 }

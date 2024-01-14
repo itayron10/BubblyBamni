@@ -6,10 +6,13 @@ using TMPro;
 public class ShowManager : MonoBehaviour
 {
     [SerializeField] CanvasGroup transitionGroup;
+    [SerializeField] GameObject showCanavs;
     [SerializeField] TextMeshProUGUI episodeNameText, speakerNameText, contentText;
     [SerializeField] GameObject atticScene;
     [SerializeField] Color bamniAmbientColor;
-    private bool episodeRunning, writingLine;
+    [SerializeField] Animator bamniAnimator, jammyAnimator;
+    public bool episodeRunning { get; private set; }
+    public bool writingLine { get; private set; }
     public ClickingInteractable currentTargetClickedInterctable;
     public Coroutine writingCoroutine; // can access through the clicking interactable when writing the mistake line
     private int currentSectionIndex, currentLineIndex;
@@ -17,11 +20,16 @@ public class ShowManager : MonoBehaviour
     private DialogSection[] currentEpisodeDialog;
     private Tape currentTape;
     private Camera mainCam;
+    public delegate void OnEpisodeEvent();
+    public OnEpisodeEvent onEndEpisode;
+    public OnEpisodeEvent onStartEpisode;
+
     public void SetEpisodeRunning(bool active) => episodeRunning = active;
 
     private void Start()
     {
         mainCam = Camera.main;
+        showCanavs.SetActive(false);
     }
 
     private void Update()
@@ -87,6 +95,12 @@ public class ShowManager : MonoBehaviour
 
     public IEnumerator WriteLine(DialogLine dialogLine)
     {
+        if (dialogLine.GetAnimationName != string.Empty)
+        {
+            if (dialogLine.GetSpeakerName == "Bamni") bamniAnimator.Play(dialogLine.GetAnimationName);
+            else if (dialogLine.GetSpeakerName == "Jammy") jammyAnimator.Play(dialogLine.GetAnimationName);
+        }
+
         writingLine = true;
         Debug.Log($"Starting to write with line index: {currentLineIndex} and section index: {currentSectionIndex} and speaker: {dialogLine.GetSpeakerName}");
         speakerNameText.text = contentText.text = string.Empty;
@@ -112,6 +126,7 @@ public class ShowManager : MonoBehaviour
     {
         SetBamniWorldActive(episodeRunning = false, currentTape.GetWorldToActivate);
         currentLineIndex = currentSectionIndex = 0;
+        onEndEpisode?.Invoke();
     }
 
     public void StartEpisode(Tape tape)
@@ -121,6 +136,7 @@ public class ShowManager : MonoBehaviour
 
     private IEnumerator StartNewTape(Tape tape)
     {
+        onStartEpisode?.Invoke();
         SetBamniWorldActive(true, tape.GetWorldToActivate);
         yield return new WaitForSeconds(tape.GetTapeStartDelay);
         episodeRunning = true;
@@ -148,6 +164,7 @@ public class ShowManager : MonoBehaviour
         atticScene.SetActive(!isBamniWorld);
         mainCam.gameObject.SetActive(!isBamniWorld);
         world.SetActive(isBamniWorld);
+        showCanavs.SetActive(isBamniWorld);
         RenderSettings.ambientLight = isBamniWorld ? bamniAmbientColor : Color.black;
         float t2 = 0f;
         while (t2 <= 1f)

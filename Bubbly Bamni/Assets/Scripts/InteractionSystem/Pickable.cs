@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pickable : Interactable
 {
+    [SerializeField] SoundScriptableObject hittingSound;
     public string nameId;
     private PlayerInventory playerInventory;
 
@@ -17,5 +18,10 @@ public class Pickable : Interactable
     {
         if (playerInventory) playerInventory.SetCurrentItem(this);
         base.Interacte();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (soundManager) soundManager.PlaySound(hittingSound);
     }
 }
